@@ -11,14 +11,12 @@ export type IDispatchProps = ReturnType<typeof mapDispatchToProps>;
 
 const mapStateToProps = (state: IRootState) => ({
   status: state.news.status,
-  pageNumber: state.news.pageNumber,
-  count: state.news.count,
   list: state.news.items,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   changeActive: (id: string, lang: string) => dispatch(Creators.newsOnRefreshActive(id, lang)),
-  getList: (pageNumber: number, lang: string) => dispatch(Creators.newsOnRefreshList(pageNumber, 10, lang)),
+  getList: (lang: string) => dispatch(Creators.newsOnRefreshList(lang)),
 });
 
 export const NewsListContainer = connect(mapStateToProps, mapDispatchToProps)(NewsList);

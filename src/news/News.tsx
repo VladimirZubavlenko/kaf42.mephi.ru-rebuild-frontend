@@ -7,8 +7,6 @@ import { Flex } from '../common/components/Flex';
 import { Colors } from '../common/enums/colors';
 import { Breakpoints } from '../common/enums/breakpoints';
 
-const scrollableId = 'scrollableDiv';
-
 export const News: React.FC = () => (
   <NewsStyled>
     <NewsItemStyled>
@@ -16,9 +14,9 @@ export const News: React.FC = () => (
         <NewsItemContainer />
       </NewsWrapperStyled>
     </NewsItemStyled>
-    <NewsListStyled id={scrollableId}>
+    <NewsListStyled>
       <NewsWrapperStyled>
-        <NewsListContainer scrollableId={scrollableId} />
+        <NewsListContainer />
       </NewsWrapperStyled>
     </NewsListStyled>
   </NewsStyled>

@@ -11,19 +11,15 @@ export enum Types {
 }
 
 export const Creators = {
-  newsOnRefreshList: (pageNumber: number, pageSize: number = 10, lang: string) =>
+  newsOnRefreshList: (lang: string) =>
     ({
       type: Types.NEWS_ON_REFRESH_LIST,
-      pageNumber,
-      pageSize,
       lang,
     } as const),
-  newsRefreshList: (news: INews[], count: number, pageNumber: number, lang: string) =>
+  newsRefreshList: (news: INews[], lang: string) =>
     ({
       type: Types.NEWS_REFRESH_LIST,
       items: news,
-      count,
-      pageNumber,
       lang,
     } as const),
   newsRefreshFetchStatus: (status: FetchingStatuses) =>

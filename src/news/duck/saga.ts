@@ -18,22 +18,15 @@ function* refreshList(action: ReturnType<typeof Creators.newsOnRefreshList>) {
   yield put(Creators.newsRefreshFetchStatus(FetchingStatuses.IN_PROGRESS));
 
   try {
-    // @ts-ignore
     const response = yield call(
       fetchData,
-      `/news/list?${qs.stringify({
-        pageNumber: action.pageNumber,
-        pageSize: action.pageSize,
+      `/news/all?${qs.stringify({
         lang: action.lang,
       })}`,
     );
+    const data: INews[] = yield response.json();
 
-    const data: {
-      count: number;
-      items: INews[];
-    } = yield response.json();
-
-    yield put(Creators.newsRefreshList(data.items, data.count, action.pageNumber, action.lang));
+    yield put(Creators.newsRefreshList(data, action.lang));
   } catch (e) {
     yield put(Creators.newsRefreshFetchStatus(FetchingStatuses.FAILED));
   }

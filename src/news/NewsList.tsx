@@ -1,61 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
-import InfiniteScroll from 'react-infinite-scroll-component';
 
 import { useIntl } from 'react-intl';
-import { FetchingStatuses } from '../common/enums/fetchingStatuses';
 import { Flex } from '../common/components/Flex';
 import { Colors } from '../common/enums/colors';
 import { IDispatchProps, IStateProps } from './NewsListContainer';
 import { LocaleContext } from '../App';
 
-export interface IProps {
-  scrollableId: string;
-}
-
-const hasMoreNews = (pageNumber: number, count: number) => pageNumber !== Math.ceil(count / 10);
-
-export const NewsList: React.FC<IProps & IStateProps & IDispatchProps> = ({
-  list,
-  changeActive,
-  getList,
-  pageNumber,
-  count,
-  status,
-  scrollableId,
-}) => {
+export const NewsList: React.FC<IStateProps & IDispatchProps> = ({ list, changeActive, getList }) => {
   const locale = useIntl();
 
   React.useEffect(() => {
-    getList(1, locale.locale);
+    getList(locale.locale);
   }, [getList, locale]);
 
   return (
     <LocaleContext.Consumer>
       {(value) => (
-        <ListStyled
-          dataLength={list.length}
-          next={() => getList(pageNumber + 1, value.locale)}
-          hasMore={hasMoreNews(pageNumber, count)}
-          loader={<div>Загрузка...</div>}
-          scrollableTarget={scrollableId}>
-          {list.map((item, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ItemStyled key={index}>
-              <TitleStyled>{item.title}</TitleStyled>
-              <DescriptionStyled>{item.description}</DescriptionStyled>
-              <DateStyled>{moment(item.createdAt).locale('ru').format('ll')}</DateStyled>
-              <ButtonStyled onClick={() => changeActive(item.id, value.locale)}>Читать</ButtonStyled>
-            </ItemStyled>
-          ))}
+        <ListStyled>
+          {list &&
+            list.map((item, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+              <ItemStyled key={index}>
+                <TitleStyled>{item.title}</TitleStyled>
+                <DescriptionStyled>{item.description}</DescriptionStyled>
+                <DateStyled>{moment(item.createdAt).locale('ru').format('ll')}</DateStyled>
+                <ButtonStyled onClick={() => changeActive(item.id, value.locale)}>Читать</ButtonStyled>
+              </ItemStyled>
+            ))}
         </ListStyled>
       )}
     </LocaleContext.Consumer>
   );
 };
 
-const ListStyled = styled(InfiniteScroll)`
+const ListStyled = styled.div`
   flex-direction: column;
 `;
 
