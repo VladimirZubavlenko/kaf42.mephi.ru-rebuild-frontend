@@ -8,4 +8,12 @@
     ],
     "@babel/preset-react"
   ],
+  "plugins": [
+    [
+      [ "react-intl", {
+        "messagesDir": "./build/messages",
+        "extractSourceLocation": true
+      }]
+    ]
+  ]
 }

@@ -18,7 +18,7 @@ const mapStateToProps = (state: IRootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   changeActive: (id: string) => dispatch(Creators.newsOnRefreshActive(id)),
-  getList: (pageNumber: number) => dispatch(Creators.newsOnRefreshList(pageNumber)),
+  getList: (pageNumber: number, lang: string) => dispatch(Creators.newsOnRefreshList(pageNumber, 10, lang)),
 });
 
 export const NewsListContainer = connect(mapStateToProps, mapDispatchToProps)(NewsList);

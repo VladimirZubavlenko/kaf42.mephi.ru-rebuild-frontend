@@ -7,7 +7,7 @@ export const fetchData = (url: string, options: any = {}) => {
   };
 
   return fetch(
-    API_URL + url,
+    `/api${url}`,
     defaultsDeep(options, {
       headers,
     }),

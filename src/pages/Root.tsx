@@ -1,33 +1,32 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import { FormattedMessage, useIntl } from 'react-intl';
 import { LayoutContent } from '../layout/LayoutContent';
 import { Flex } from '../common/components/Flex';
 import { Fonts } from '../common/enums/fonts';
 import { Breakpoints } from '../common/enums/breakpoints';
 
 const Root: React.FC = () => {
+  const intl = useIntl();
+
   React.useEffect(() => {
     document.title = 'Главная | Кафедра 42';
   });
 
   return (
-    <LayoutContent title="Главная страница">
+    <LayoutContent title={intl.messages['home.title'].toLocaleString()}>
       <RootContent>
         <WrapperStyled>
           <RootText>
             <p>
-              Приветствуем Вас на официальном сайте кафедры №42 «Криптология и кибербезопасность» Национального
-              исследовательского ядерного университета «МИФИ»!
+              <FormattedMessage id="home.p1" />
             </p>
             <p>
-              Наши сотрудники — эксперты в области компьютерной безопасности, представляющие кафедру на всероссийских и
-              международных научных конференциях. Часть преподавателей – работники государственных и передовых
-              коммерческих компаний, специализирующихся на защите информации.
+              <FormattedMessage id="home.p2" />
             </p>
             <p>
-              Наши студенты, аспиранты и выпускники побеждают не только на всероссийских олимпиадах и конкурсах, но и на
-              международных CTF-соревнованиях и конкурсах от ведущих мировых компаний в области кибербезопасности.
+              <FormattedMessage id="home.p3" />
             </p>
           </RootText>
         </WrapperStyled>
@@ -44,7 +43,6 @@ const RootContent = styled(Flex)`
 const RootText = styled.div`
   line-height: 1.6;
   font-size: 2.2rem;
-  position: absolute;
   padding: 5rem 30% 5rem 8rem;
   font-family: ${Fonts.PIXEL}, sans-serif;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;

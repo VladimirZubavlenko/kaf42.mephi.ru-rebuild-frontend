@@ -24,6 +24,7 @@ function* refreshList(action: ReturnType<typeof Creators.newsOnRefreshList>) {
       `/news/list?${qs.stringify({
         pageNumber: action.pageNumber,
         pageSize: action.pageSize,
+        lang: action.lang,
       })}`,
     );
 
@@ -32,7 +33,7 @@ function* refreshList(action: ReturnType<typeof Creators.newsOnRefreshList>) {
       items: INews[];
     } = yield response.json();
 
-    yield put(Creators.newsRefreshList(data.items, data.count, action.pageNumber));
+    yield put(Creators.newsRefreshList(data.items, data.count, action.pageNumber, action.lang));
   } catch (e) {
     yield put(Creators.newsRefreshFetchStatus(FetchingStatuses.FAILED));
   }
@@ -44,6 +45,7 @@ function* refreshActive(action: ReturnType<typeof Creators.newsOnRefreshActive>)
     const response = yield call(
       fetchData,
       `/news/item?${qs.stringify({
+        lang: action.lang,
         id: action.id,
       })}`,
     );

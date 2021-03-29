@@ -5,8 +5,10 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const config = {
   entry: path.resolve(__dirname, './src/index.tsx'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'public/app'),
+    publicPath: '/',
+    filename: '[name].[contenthash].js',
+    pathinfo: false,
   },
   module: {
     rules: [
@@ -67,7 +69,7 @@ const config = {
   },
   target: process.env.NODE_ENV === 'development' ? 'web' : 'browserslist',
   resolve: {
-    extensions: ['.js', '.jsx', '.tsx', '.ts'],
+    extensions: ['.js', '.jsx', '.tsx', '.ts', 'json'],
   },
   devServer: {
     port: 8080,
@@ -96,9 +98,11 @@ const config = {
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
     }),
+
     new webpack.DefinePlugin({
       'process.env': '{}',
       global: {},
+      API_URL: JSON.stringify(process.env.API_URL),
     }),
   ],
   devtool: 'source-map',

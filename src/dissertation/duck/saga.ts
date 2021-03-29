@@ -14,7 +14,7 @@ function* refreshDissertation() {
 
   try {
     // @ts-ignore
-    const response = yield call(fetchData, '/dissertation/list/');
+    const response = yield call(fetchData, '/dissertation/list/?lang=RU');
 
     const data: IDissertation[] = yield response.json();
 

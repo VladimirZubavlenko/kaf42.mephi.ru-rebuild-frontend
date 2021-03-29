@@ -1,0 +1,21 @@
+{
+  "locale": "EN",
+  "messages": {
+    "home.title": "Main",
+    "home.p1": "We are happy to welcome You to the official website of the Cryptology and Cybersecurity Department №42 of MEPhI!",
+    "home.p2": "Our employees are experts in the field of cybersecurity, representing the department at Russian and international scientific conferences. Some teachers are employees of state and advanced commercial companies specializing in information protection.",
+    "home.p3": "Our students, postgraduates, and graduates win at Russian olympiads and competitions and also at international CTF-competitions and contests from the world's leading companies in the field of cybersecurity.",
+    "menu.main": "Main",
+    "menu.employee": "Employees",
+    "menu.bachelor": "Bachelor",
+    "menu.master": "Master",
+    "menu.ikaf42": "ikaf42.ru",
+    "menu.news": "News",
+    "menu.employer": "Employers",
+    "menu.dissertation": "Dissertation",
+    "menu.contacts": "Contacts",
+    "menu.instagram": "Instagram",
+    "menu.youtube": "YouTube",
+    "menu.lang": "Русский"
+  }
+}

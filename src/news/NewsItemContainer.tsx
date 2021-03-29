@@ -15,7 +15,8 @@ const mapStateToProps = (state: IRootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getActive: () => dispatch(Creators.newsOnRefreshActive()),
+  // @ts-ignore
+  getActive: (id?: string, lang: string) => dispatch(Creators.newsOnRefreshActive(id, lang)),
 });
 
 export const NewsItemContainer = connect(mapStateToProps, mapDispatchToProps)(NewsItem);

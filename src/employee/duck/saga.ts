@@ -14,7 +14,7 @@ function* refreshEmployee() {
 
   try {
     // @ts-ignore
-    const response = yield call(fetchData, '/employee/list/');
+    const response = yield call(fetchData, '/employee/list/?lang=RU');
 
     const data: IEmployeeWithType = yield response.json();
 
