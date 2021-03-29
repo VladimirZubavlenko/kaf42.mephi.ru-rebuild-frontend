@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import styled from 'styled-components';
 
+import { useIntl } from 'react-intl';
 import { Colors } from '../common/enums/colors';
 import { Flex } from '../common/components/Flex';
 
@@ -23,6 +24,8 @@ const customStyles = {
 Modal.setAppElement('#app');
 
 export const EmployeeItemListItemSubject: React.FC<IProps> = ({ title, children }) => {
+  const locale = useIntl();
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -36,7 +39,7 @@ export const EmployeeItemListItemSubject: React.FC<IProps> = ({ title, children 
   return (
     <ItemStyled>
       <TitleStyled>{title}</TitleStyled>
-      <ShowButton onClick={openModal}>Показать</ShowButton>
+      <ShowButton onClick={openModal}>{locale.messages['employee.show']}</ShowButton>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
         <TextStyled>{children}</TextStyled>
       </Modal>

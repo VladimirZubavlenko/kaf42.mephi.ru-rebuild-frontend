@@ -28,6 +28,15 @@
     "contacts.zvi.dol": "По вопросам поступления:",
     "contacts.zvi": "Зубавленко Владимир Иванович",
     "contacts.zvi.phone": "Телефон +7 (495) 788 56 99, доб. 9642",
-    "contacts.zvi.email": "Почта VIZubavlenko@mephi.ru"
+    "contacts.zvi.email": "Почта VIZubavlenko@mephi.ru",
+    "employee.title": "Сотрудники кафедры",
+    "employee.head": "Заведующий кафедрой",
+    "employee.deputy": "Заместитель заведующего кафедрой",
+    "employee.secretary": "Секретарь",
+    "employee.show": "Показать",
+    "employee.post": "Должность",
+    "employee.degree": "Ученая степень",
+    "employee.employment": "Место работы",
+    "employee.courses": "Дисциплины"
   }
 }
