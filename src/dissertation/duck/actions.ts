@@ -8,9 +8,10 @@ export enum Types {
 }
 
 export const Creators = {
-  dissertationGetList: () =>
+  dissertationGetList: (locale) =>
     ({
       type: Types.DISSERTATION_GET_LIST,
+      locale,
     } as const),
   dissertationRefreshList: (dissertations: IDissertation[]) =>
     ({

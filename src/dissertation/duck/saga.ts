@@ -1,4 +1,5 @@
 import { all, put, takeEvery, call } from 'redux-saga/effects';
+import qs from 'query-string';
 
 import { Creators, Types } from './actions';
 import { FetchingStatuses } from '../../common/enums/fetchingStatuses';
@@ -9,12 +10,17 @@ export function* onGetList() {
   yield takeEvery(Types.DISSERTATION_GET_LIST, refreshDissertation);
 }
 
-function* refreshDissertation() {
+function* refreshDissertation(action: ReturnType<typeof Creators.dissertationGetList>) {
   yield put(Creators.dissertationRefreshFetchStatus(FetchingStatuses.IN_PROGRESS));
 
   try {
     // @ts-ignore
-    const response = yield call(fetchData, '/dissertation/list/?lang=RU');
+    const response = yield call(
+      fetchData,
+      `/dissertation/list/?${qs.stringify({
+        lang: action.locale,
+      })}`,
+    );
 
     const data: IDissertation[] = yield response.json();
 

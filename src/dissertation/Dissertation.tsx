@@ -1,14 +1,17 @@
 import * as React from 'react';
 
 import styled from 'styled-components';
+import { useIntl } from 'react-intl';
 import { IDispatchProps, IStateProps } from './DissertationContainer';
 import { DissertationItem } from './DissertationItem';
 import { Flex } from '../common/components/Flex';
 
 export const Dissertation: React.FC<IStateProps & IDispatchProps> = ({ items, getList }) => {
+  const locale = useIntl();
+
   React.useEffect(() => {
-    getList();
-  }, [getList]);
+    getList(locale.locale);
+  }, [getList, locale.locale]);
 
   return (
     <DissertationListStyled>

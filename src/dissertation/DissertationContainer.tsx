@@ -15,7 +15,7 @@ const mapStateToProps = (state: IRootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getList: () => dispatch(Creators.dissertationGetList()),
+  getList: (locale: string) => dispatch(Creators.dissertationGetList(locale)),
 });
 
 export const DissertationContainer = connect(mapStateToProps, mapDispatchToProps)(Dissertation);
