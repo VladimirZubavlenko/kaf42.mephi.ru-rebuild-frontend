@@ -8,9 +8,10 @@ export enum Types {
 }
 
 export const Creators = {
-  employeeGetList: () =>
+  employeeGetList: (lang: string) =>
     ({
       type: Types.EMPLOYEE_GET_LIST,
+      lang,
     } as const),
   employeeRefreshList: (employee: IEmployeeWithType) =>
     ({

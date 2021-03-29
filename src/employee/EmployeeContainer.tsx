@@ -16,7 +16,7 @@ const mapStateToProps = (state: IRootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  getList: () => dispatch(Creators.employeeGetList()),
+  getList: (lang: string) => dispatch(Creators.employeeGetList(lang)),
 });
 
 export const EmployeeContainer = connect(mapStateToProps, mapDispatchToProps)(Employee);

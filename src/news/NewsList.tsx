@@ -28,10 +28,8 @@ export const NewsList: React.FC<IProps & IStateProps & IDispatchProps> = ({
   const locale = useIntl();
 
   React.useEffect(() => {
-    if (status === FetchingStatuses.NONE) {
-      getList(1, locale.locale);
-    }
-  }, [getList, status, locale]);
+    getList(1, locale.locale);
+  }, [getList, locale]);
 
   return (
     <LocaleContext.Consumer>
@@ -48,7 +46,7 @@ export const NewsList: React.FC<IProps & IStateProps & IDispatchProps> = ({
               <TitleStyled>{item.title}</TitleStyled>
               <DescriptionStyled>{item.description}</DescriptionStyled>
               <DateStyled>{moment(item.createdAt).locale('ru').format('ll')}</DateStyled>
-              <ButtonStyled onClick={() => changeActive(item.id)}>Читать</ButtonStyled>
+              <ButtonStyled onClick={() => changeActive(item.id, value.locale)}>Читать</ButtonStyled>
             </ItemStyled>
           ))}
         </ListStyled>

@@ -17,7 +17,7 @@ const mapStateToProps = (state: IRootState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  changeActive: (id: string) => dispatch(Creators.newsOnRefreshActive(id)),
+  changeActive: (id: string, lang: string) => dispatch(Creators.newsOnRefreshActive(id, lang)),
   getList: (pageNumber: number, lang: string) => dispatch(Creators.newsOnRefreshList(pageNumber, 10, lang)),
 });
 

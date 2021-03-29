@@ -3,7 +3,6 @@ import parse from 'html-react-parser';
 
 import styled from 'styled-components';
 import { useIntl } from 'react-intl';
-import { FetchingStatuses } from '../common/enums/fetchingStatuses';
 import { Colors } from '../common/enums/colors';
 import { IDispatchProps, IStateProps } from './NewsItemContainer';
 
@@ -11,10 +10,8 @@ export const NewsItem: React.FC<IStateProps & IDispatchProps> = ({ item, status,
   const locale = useIntl();
 
   React.useEffect(() => {
-    if (status === FetchingStatuses.NONE) {
-      getActive(null, locale.locale);
-    }
-  }, [getActive, status, locale]);
+    getActive(null, locale.locale);
+  }, [getActive, locale]);
 
   return <NewsStyled>{item && parse(item.body)}</NewsStyled>;
 };

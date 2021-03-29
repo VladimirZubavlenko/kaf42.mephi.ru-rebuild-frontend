@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
+import { useIntl } from 'react-intl';
 import { Flex } from '../common/components/Flex';
 import { EmployeeItem } from './EmployeeItem';
 import { Colors } from '../common/enums/colors';
@@ -8,9 +9,11 @@ import { IDispatchProps, IStateProps } from './EmployeeContainer';
 import { Breakpoints } from '../common/enums/breakpoints';
 
 export const Employee: React.FC<IStateProps & IDispatchProps> = ({ employeeMain, employeeList, getList }) => {
+  const locale = useIntl();
+
   React.useEffect(() => {
-    getList();
-  }, [getList]);
+    getList(locale.locale);
+  }, [getList, locale]);
 
   return (
     <EmployeeStyled>

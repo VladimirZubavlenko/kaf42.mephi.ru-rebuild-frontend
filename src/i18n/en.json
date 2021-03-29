@@ -16,6 +16,18 @@
     "menu.contacts": "Contacts",
     "menu.instagram": "Instagram",
     "menu.youtube": "YouTube",
-    "menu.lang": "Русский"
+    "menu.lang": "Русский",
+    "contacts.ave.dol": "И.о. заведующего кафедрой:",
+    "contacts.ave": "Epishkina Anna V.",
+    "contacts.ave.phone": "Телефон +7 (495) 788 56 99, доб. 9842",
+    "contacts.ave.email": "Почта AVEpishina@mephi.ru",
+    "contacts.kkg.dol": "Заместитель заведующего кафедрой:",
+    "contacts.kkg": "Kogos Konstantin G.",
+    "contacts.kkg.phone": "Телефон +7 (495) 788 56 99, доб. 9688",
+    "contacts.kkg.email": "Почта KGKogos@mephi.ru",
+    "contacts.zvi.dol": "По вопросам поступления:",
+    "contacts.zvi": "Zubavlenko Vladimir I.",
+    "contacts.zvi.phone": "Телефон +7 (495) 788 56 99, доб. 9642",
+    "contacts.zvi.email": "Почта VIZubavlenko@mephi.ru"
   }
 }

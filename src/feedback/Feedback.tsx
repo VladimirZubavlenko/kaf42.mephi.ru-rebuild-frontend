@@ -1,45 +1,57 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { FormattedMessage } from 'react-intl';
 import { Colors } from '../common/enums/colors';
 
 export const Feedback: React.FC = () => (
   <FeedbackStyled>
     <Card>
       <p>
-        <strong>И.о. заведующего кафедрой:</strong>
-      </p>
-      <p>Епишкина Анна Васильевна</p>
-      <p>
-        Телефон <LinkStyled href="tel:+74957885699p9842">+7 (495) 788 56 99</LinkStyled>, доб. 9842
+        <strong>
+          <FormattedMessage id="contacts.ave.dol" />
+        </strong>
       </p>
       <p>
-        Почта <LinkStyled href="mailto:AVEpishina@mephi.ru">AVEpishina@mephi.ru</LinkStyled>
+        <FormattedMessage id="contacts.ave" />
+      </p>
+      <p>
+        <FormattedMessage id="contacts.ave.phone" />
+      </p>
+      <p>
+        <FormattedMessage id="contacts.ave.email" />
       </p>
     </Card>
     <Card>
       <p>
-        <strong>Заместитель заведующего кафедрой:</strong>
-      </p>
-      <p>Когос Константин Григорьевич</p>
-      <p>
-        Телефон <LinkStyled href="tel:+74957885699p9688">+7 (495) 788 56 99</LinkStyled>, доб. 9688
+        <strong>
+          <FormattedMessage id="contacts.kkg.dol" />
+        </strong>
       </p>
       <p>
-        Почта <LinkStyled href="mailto:KGKogos@mephi.ru">KGKogos@mephi.ru</LinkStyled>
+        <FormattedMessage id="contacts.kkg" />
+      </p>
+      <p>
+        <FormattedMessage id="contacts.kkg.phone" />
+      </p>
+      <p>
+        <FormattedMessage id="contacts.kkg.email" />
       </p>
     </Card>
     <Card>
       <p>
-        <strong>По вопросам поступления:</strong>
-      </p>
-      <p>Зубавленко Владимир Иванович</p>
-      <p>
-        Телефон <LinkStyled href="tel:+74957885699p9642">+7 (495) 788 56 99</LinkStyled>, доб. 9642
+        <strong>
+          <FormattedMessage id="contacts.zvi.dol" />
+        </strong>
       </p>
       <p>
-        Почта <LinkStyled href="mailto:VIZubavlenko@mephi.ru">VIZubavlenko@mephi.ru</LinkStyled>
+        <FormattedMessage id="contacts.zvi" />
       </p>
-      <br />
+      <p>
+        <FormattedMessage id="contacts.zvi.phone" />
+      </p>
+      <p>
+        <FormattedMessage id="contacts.zvi.email" />
+      </p>
       <br />
     </Card>
   </FeedbackStyled>
