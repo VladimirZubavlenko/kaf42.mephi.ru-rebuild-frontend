@@ -1,0 +1,16 @@
+version: '2.4'
+
+services:
+
+  frontend-nginx:
+    container_name: frontend-nginx
+    image: nginx:1.19.9-alpine
+    volumes:
+      - ./public:/var/www/public
+      - ./docker/nginx:/etc/nginx/conf.d
+    restart: always
+
+networks:
+  default:
+    external:
+      name: kaf42-rebuild
