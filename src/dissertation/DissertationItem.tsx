@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import moment from 'moment';
+import { FormattedMessage } from 'react-intl';
 import { IDissertation, IDissertationFields } from './interfaces/IDissertation';
 import { getStringByBoolean } from '../common/helpers/getStringByBoolean';
 import { Flex } from '../common/components/Flex';
@@ -34,7 +35,7 @@ export const DissertationItem: React.FC<IProps> = ({ item, isHeader }) => (
         ? item.dissertationFile
         : item.dissertationFile !== 'null' && (
             <LinkStyled href={`${API_URL}/download/${item.dissertationFile}`} target="_blank">
-              Скачать
+              <FormattedMessage id="dissertation.download" />
             </LinkStyled>
           )}
     </DissertationCellStyled>
@@ -43,7 +44,7 @@ export const DissertationItem: React.FC<IProps> = ({ item, isHeader }) => (
         ? item.autoRefFile
         : item.autoRefFile !== 'null' && (
             <LinkStyled href={`${API_URL}/download/${item.autoRefFile}`} target="_blank">
-              Скачать
+              <FormattedMessage id="dissertation.download" />
             </LinkStyled>
           )}
     </DissertationCellStyled>
