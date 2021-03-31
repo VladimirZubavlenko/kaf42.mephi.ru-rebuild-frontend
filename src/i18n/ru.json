@@ -37,6 +37,20 @@
     "employee.post": "Должность",
     "employee.degree": "Ученая степень",
     "employee.employment": "Место работы",
-    "employee.courses": "Дисциплины"
+    "employee.courses": "Дисциплины",
+    "news.read": "Читать",
+    "dissertation.title": "Наши диссертации",
+    "dissertation.fio": "ФИО соискателя",
+    "dissertation.theme": "Тема",
+    "dissertation.degree": "Степень",
+    "dissertation.place": "Место защиты",
+    "dissertation.year": "Год",
+    "dissertation.dissfile": "Диссертация",
+    "dissertation.reffile": "Автореферат",
+    "employers.title": "Работодатели",
+    "employers.graduates": "Наши выпускники – сотрудники государственных организаций, компаний, специализирующихся на защите информации, и крупных ИТ-компаний.",
+    "employers.government": "Государственный сектор:",
+    "employers.infoseccompanies": "Компании, специализирующиеся на защите информации:",
+    "employers.itcompanies": "Крупные ИТ-компании:"
   }
 }

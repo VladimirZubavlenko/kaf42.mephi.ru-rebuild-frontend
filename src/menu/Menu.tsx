@@ -103,6 +103,7 @@ const Button = styled.a`
   :hover {
     opacity: 0.8;
     border-left: 5px solid ${Colors.GREEN};
+    cursor: pointer;
   }
 `;
 

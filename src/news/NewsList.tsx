@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
 
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { Flex } from '../common/components/Flex';
 import { Colors } from '../common/enums/colors';
 import { IDispatchProps, IStateProps } from './NewsListContainer';
@@ -25,8 +25,10 @@ export const NewsList: React.FC<IStateProps & IDispatchProps> = ({ list, changeA
               <ItemStyled key={index}>
                 <TitleStyled>{item.title}</TitleStyled>
                 <DescriptionStyled>{item.description}</DescriptionStyled>
-                <DateStyled>{moment(item.createdAt).locale('ru').format('ll')}</DateStyled>
-                <ButtonStyled onClick={() => changeActive(item.id, value.locale)}>Читать</ButtonStyled>
+                <DateStyled>{moment(item.createdAt).locale(value.locale).format('ll')}</DateStyled>
+                <ButtonStyled onClick={() => changeActive(item.id, value.locale)}>
+                  <FormattedMessage id="news.read" />
+                </ButtonStyled>
               </ItemStyled>
             ))}
         </ListStyled>

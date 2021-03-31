@@ -18,14 +18,14 @@ export const Dissertation: React.FC<IStateProps & IDispatchProps> = ({ items, ge
       <DissertationItem
         isHeader
         item={{
-          fullName: 'ФИО соискателя',
-          academicDegree: 'Степень',
-          defendPlace: 'Место защиты',
-          defendDate: 'Год',
-          theme: 'Тема',
+          fullName: locale.messages['dissertation.fio'].toLocaleString(),
+          academicDegree: locale.messages['dissertation.degree'].toLocaleString(),
+          defendPlace: locale.messages['dissertation.place'].toLocaleString(),
+          defendDate: locale.messages['dissertation.year'].toLocaleString(),
+          theme: locale.messages['dissertation.theme'].toLocaleString(),
           supervisor: 'Научный руководитель',
-          autoRefFile: 'Автореферат',
-          dissertationFile: 'Диссертация',
+          autoRefFile: locale.messages['dissertation.reffile'].toLocaleString(),
+          dissertationFile: locale.messages['dissertation.dissfile'].toLocaleString(),
         }}
       />
       {items.map((item) => (
