@@ -58,9 +58,6 @@ export const Employer: React.FC<IProps> = () => (
         <a href="https://infosec.ru/" target="_blank" rel="noreferrer">
           <li>Информзащита</li>
         </a>
-        <a href="https://www.ptsecurity.com/ru-ru/" target="_blank" rel="noreferrer">
-          <li>Positive Technologies</li>
-        </a>
         <a href="https://www.group-ib.ru/" target="_blank" rel="noreferrer">
           <li>Group-IB</li>
         </a>
