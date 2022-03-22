@@ -88,9 +88,6 @@ export const Employer: React.FC<IProps> = () => (
         <a href="https://www.angaratech.ru/" target="_blank" rel="noreferrer">
           <li>Angara</li>
         </a>
-        <a href="https://www.esetnod32.ru/" target="_blank" rel="noreferrer">
-          <li>ESET NOD32</li>
-        </a>
         <a href="https://www.aktiv-company.ru/" target="_blank" rel="noreferrer">
           <li>Актив</li>
         </a>
@@ -99,41 +96,11 @@ export const Employer: React.FC<IProps> = () => (
     <ul>
       <FormattedMessage id="employers.itcompanies" />
       <ul>
-        <a href="https://www.ibm.com/ru-ru" target="_blank" rel="noreferrer">
-          <li>IBM</li>
-        </a>
-        <a href="https://www8.hp.com/ru/ru/hp-information/index.html" target="_blank" rel="noreferrer">
-          <li>HP</li>
-        </a>
-        <a href="https://www.delltechnologies.com/ru-ru/index.htm" target="_blank" rel="noreferrer">
-          <li>Dell EMC</li>
-        </a>
-        <a href="https://yadro.com/" target="_blank" rel="noreferrer">
-          <li>YADRO</li>
-        </a>
-        <a href="https://www.pwc.ru/" target="_blank" rel="noreferrer">
-          <li>PricewaterhouseCoopers</li>
-        </a>
-        <a href="https://www.ey.com/ru/ru/home" target="_blank" rel="noreferrer">
-          <li>EY</li>
-        </a>
         <a href="https://yandex.ru/company/" target="_blank" rel="noreferrer">
           <li>Яндекс</li>
         </a>
         <a href="https://corp.mail.ru/ru/company/strategy/" target="_blank" rel="noreferrer">
           <li>Mail.ru Group</li>
-        </a>
-        <a href="https://about.google/" target="_blank" rel="noreferrer">
-          <li>Google</li>
-        </a>
-        <a
-          href="https://www.intel.ru/content/www/ru/ru/company-overview/company-overview.html"
-          target="_blank"
-          rel="noreferrer">
-          <li>Intel</li>
-        </a>
-        <a href="https://www.nvidia.com/ru-ru/about-nvidia/" target="_blank" rel="noreferrer">
-          <li>NVIDIA</li>
         </a>
       </ul>
     </ul>

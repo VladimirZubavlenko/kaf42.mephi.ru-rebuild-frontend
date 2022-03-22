@@ -56,12 +56,12 @@ export const Menu: React.FC<IStateProps> = ({ activeUrl }) => (
             <MenuItem isActive={activeUrl === Routes.FEEDBACK} path={Routes.FEEDBACK}>
               <FormattedMessage id="menu.contacts" />
             </MenuItem>
-            <MenuExternalLinkItem path="https://www.instagram.com/kaf42_mephi/">
+            {/* <MenuExternalLinkItem path="https://www.instagram.com/kaf42_mephi/">
               <FormattedMessage id="menu.instagram" />
             </MenuExternalLinkItem>
             <MenuExternalLinkItem path="https://www.youtube.com/channel/UCa0DZcD7wm2QNs5G_n-G6xw/featured">
               <FormattedMessage id="menu.youtube" />
-            </MenuExternalLinkItem>
+            </MenuExternalLinkItem> */}
             <Button onClick={() => value.toggleLocale()}>
               <FormattedMessage id="menu.lang" />
             </Button>
