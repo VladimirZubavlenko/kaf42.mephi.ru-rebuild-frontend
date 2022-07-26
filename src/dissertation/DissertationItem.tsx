@@ -34,7 +34,7 @@ export const DissertationItem: React.FC<IProps> = ({ item, isHeader }) => (
       {isHeader
         ? item.dissertationFile
         : item.dissertationFile !== 'null' && (
-            <LinkStyled href={`${API_URL}/download/${item.dissertationFile}`} target="_blank">
+            <LinkStyled href={`/api/download/${item.dissertationFile}`} target="_blank">
               <FormattedMessage id="dissertation.download" />
             </LinkStyled>
           )}
@@ -43,7 +43,7 @@ export const DissertationItem: React.FC<IProps> = ({ item, isHeader }) => (
       {isHeader
         ? item.autoRefFile
         : item.autoRefFile !== 'null' && (
-            <LinkStyled href={`${API_URL}/download/${item.autoRefFile}`} target="_blank">
+            <LinkStyled href={`/api/download/${item.autoRefFile}`} target="_blank">
               <FormattedMessage id="dissertation.download" />
             </LinkStyled>
           )}

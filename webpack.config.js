@@ -72,7 +72,7 @@ const config = {
     extensions: ['.js', '.jsx', '.tsx', '.ts', 'json'],
   },
   devServer: {
-    port: 8080,
+    port: 8081,
     open: true,
     hot: true,
     contentBase: ['./src', './dist'],
@@ -81,7 +81,7 @@ const config = {
     proxy: {
       '/api/': {
         context: () => true,
-        target: 'http://[::1]:3000',
+        target: 'https://kaf42.mephi.ru',
         secure: false,
         changeOrigin: true,
         headers: {
